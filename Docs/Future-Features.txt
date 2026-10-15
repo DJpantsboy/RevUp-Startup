@@ -1,3 +1,4 @@
+#1001
 part blueprint menu:
 Allow you to design parts by adding operations and seeing what attributes operations perform, before putting it on the manufacturing line.
 Would allow you to plan how you are going to make a part before you make it.
@@ -5,3 +6,23 @@ I think this will be critical.
 
 I think the equipment and operations you can see and experiment with in the blueprints menu should be limited to the operations & machines you currently have access to?
 Should be some prevention from just simulating any equipment. Or, is this not an issue.
+
+#1002
+Employee interactions.
+Give employees functionality like lunch breaks, smoke breaks, and conversation with each other.
+Employees gain some personality that impacts speed of work and quality.
+Optional: implement ultra-light chat LLM for employees talking to player.
+Optional: implement "leader" employee (you can promote) that projects some of its personality on to nearby employees that are its subordinates.
+
+#1003
+Visitable box store.
+A Store world-area that can be visited by the player in their pickup truck. Here you can buy equipment and materials.
+Goal: make the world feel bigger to the player.
+
+#1004
+Implement equipment breakdowns.
+New employee type: maintenance technitian.
+
+#1005
+Office staff.
+Implement office employees that perform tasks like come up with parts to match market needs, and propose new equipment purchases to do so.
