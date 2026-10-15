@@ -1,0 +1,55 @@
+General Visual Style:
+Top-down grid system.
+Graphics will be squares, but drawn at an angle to provide depth.
+Will use standard GoDot grid system.
+
+
+Gameplay:
+User can navigate via keyboard input and by clicking on a reachable tile and having automatic pathfinding bring them there.
+Users cannot jump.
+Users interact via spacebar or by clicking on an object.
+All interactable objects will have an interactable "target" zone that is normally not just the entire object. This zone will move accordingly if the object is rotated. (as such, all rotatable object sprites will require a front, a back, and a side view)
+
+When an piece of equipment/any interactable object is used, an in-picture screen will pull up, and the background screen will become grey.
+The in-picture screen will feature an eye-level view of the piece of the equipment, with the appropriate lever/button/input pad to use the equipment, to loosely simulate actually using the equipment like you would in real life.
+For an object like a computer, the computer screen will pull up.
+
+To get a contract, the user finds a need, builds a sample product, and submits a sample part to the company in need.
+Then, if it is good enough, they receive a contract. The contract will ask for a certain qty of parts at certain time intervals.
+The player then proceeds to produce parts to ship and fulfill the contract.
+
+Players can manage contracts from the computer.
+
+To create a part, the user/an employee will go get a piece of material. This takes up their inventory slot.
+They take it to a piece of equipment, and perform the operation. Then they take it to the next piece of equipment.
+Once all the operations have been performed, they take it and package it. A package can have multiple parts, and/or multiple packages inside.
+Once they package it, they take it to the ShippingArea and send it out to fulfil a contract.
+
+World Areas:
+
+-Manufacturing Facility
+ShopFloor: Physical environment where ProductionJobs, Operations, WorkInstructions, Equipment, Employees, Parts, and Assemblies are executed
+StorageArea: Environment for holding InventoryContainers, Parts, Assemblies, Materials, and Finished Goods between production and logistics activities
+ArrivalArea: Receiving environment where Deliveries, ShippingRequests, Parts, and Assemblies enter the company inventory.
+ShippingArea: Dispatch environment where completed Orders, Deliveries, Parts, and Assemblies leave the company to satisfy demand
+
+-Office
+Computer: Interactive interface allowing the player to access and manage Company, Market, Production, Logistics, Finance, and Service Layer data
+
+-General
+Player: Human-controlled actor that observes, manages, and influences all Core Domain objects through interaction.
+Interactable: Base world object that exposes Core Domain data and actions to the player through the World Layer.
+
+#High Level Areas#
+WORKSPACE: The company building that contains the world areas.
+
+Home: starting workspace. Contains Home Office (initial office area), Garage (initial ShopFloor), Shed (initial StorageArea), Driveway (initial ArrivalArea + ShippingArea)
+
+Downtown Warehouse: Upgraded workspace. Contains the same areas as Home, but larger.
++further upgraded workspaces
+
+Inventory:
+The player can carry one part/object at a time. A box full of parts counts as one object.
+
+
+
