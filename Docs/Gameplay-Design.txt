@@ -23,7 +23,9 @@ Players can manage contracts from the computer.
 To create a part, the user/an employee will go get a piece of material. This takes up their inventory slot.
 They take it to a piece of equipment, and perform the operation. Then they take it to the next piece of equipment.
 Once all the operations have been performed, they take it and package it. A package can have multiple parts, and/or multiple packages inside.
-Once they package it, they take it to the ShippingArea and send it out to fulfil a contract.
+Once they package it, they take it to the ShippingArea and send it out to fulfill a contract.
+
+Employees can perform the exact same tasks in the ManufacturingFacility as the player.
 
 World Areas:
 
