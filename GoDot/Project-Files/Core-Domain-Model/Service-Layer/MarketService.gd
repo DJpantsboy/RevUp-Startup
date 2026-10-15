@@ -267,4 +267,5 @@ func refresh_market(
 func get_summary() -> String:
 
 	return (
-		
+		"MarketService | Demand → Contract → Order"
+	)
