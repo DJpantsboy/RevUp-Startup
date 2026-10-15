@@ -1,0 +1,20 @@
+A workspace is the world zone that contains the following:
+
+Manufacturing Facility+subareas
+Office+subareas
+
+Think of it like a campus that the player can move about freely in to access all the manufacturing facility subareas and office subareas.
+
+The initial workspace is your Home
+
+Home Workspace:
+-Manufacturing Facility
+--shop floor: garage
+--storage area: backyard shed
+--shipping & arrival areas: driveway
+
+-Office: Home Office
+--Computer
+
+Further workspaces are upgrades to be rented or bought.
+Upgrading a workspace provides a larger manufacturing facility, with upgraded shipping & arrival areas.
