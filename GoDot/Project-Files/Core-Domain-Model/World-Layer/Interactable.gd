@@ -46,34 +46,34 @@ var is_enabled: bool = true
 #
 # Child classes should override this function.
 func interact(player: Player) -> void:
-        pass
+	pass
 
 
 # Returns whether interaction is currently possible.
 func can_interact(player: Player) -> bool:
 
-        if not is_enabled:
-                return false
+	if not is_enabled:
+		return false
 
-        return true
+	return true
 
 # ------------------------------------------------------------------
 # State Functions
 # ------------------------------------------------------------------
 
 func enable() -> void:
-        is_enabled = true
+	is_enabled = true
 
 
 func disable() -> void:
-        is_enabled = false
+	is_enabled = false
 
 # ------------------------------------------------------------------
 # Validation Functions
 # ------------------------------------------------------------------
 
 func is_valid_interactable() -> bool:
-        return not interactable_name.is_empty()
+	return not interactable_name.is_empty()
 
 # ------------------------------------------------------------------
 # Debug Functions
@@ -81,6 +81,7 @@ func is_valid_interactable() -> bool:
 
 func get_summary() -> String:
 
-        return "%s | Enabled: %s" % [
-                interactable_name,
-                str
+	return "%s | Enabled: %s" % [
+		interactable_name,
+		str(is_enabled)
+	]
