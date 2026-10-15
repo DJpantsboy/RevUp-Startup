@@ -1,0 +1,122 @@
+Architectural Roles
+Core Domain Model Architectural Roles
+
+##
+NOTE:
+Godot Rule
+Nothing should directly know about everything else.
+A Part should not know what the Market is, an Employee should not know what a Company is, and an Order should not know how a machine works. 
+Communication should flow through focused services and events, preventing god objects and keeping the project aligned with the Sacred Framework
+##
+
+Foundation Layer (Pure Data Definitions)
+
+MaterialDefinition - Static definition of a material type and its starting attributes.
+
+OperationDefinition - Static definition of an operation and the attribute modifications it applies.
+
+EquipmentDefinition - Static definition of a machine type, supported operations, cost, and cycle times.
+
+PartDefinition - Static recipe describing a known material and operation sequence.
+
+NeedDefinition - Static market need template used for generating dynamic needs.
+
+AttributeDefinition-Creates a master list of valid attributes in the game
+
+Industry Definition- Provides the industries used by market generation.
+
+Runtime Domain Layer (Live Game Objects)
+
+Part - Runtime product instance containing a material reference and operation history.
+
+Assembly - Runtime collection of parts and/or subassemblies.
+
+Equipment - Runtime machine placed in the world and capable of performing operations.
+
+Employee - Runtime worker capable of executing work instructions.
+
+Order - Runtime production request specifying the product, quantity, due date, and payment terms required to fulfill a contract.
+
+Need - Runtime market opportunity generated from the market system.
+
+Production Layer
+
+OperationExecution - Represents a single operation currently being performed on a part.
+
+WorkInstruction - Defines work to be performed on a specific part type.
+
+Task - Individual executable employee action such as move, operate, wait, or ship.
+
+ProductionJob - Tracks a product's progress through manufacturing.
+
+Logistics Layer
+
+InventoryContainer - Generic storage object capable of holding assemblies.
+
+ShippingRequest - Incoming or outgoing shipment scheduled by the shipping system.
+
+Delivery - Physical shipment currently traveling through the world.
+
+Location - Logical destination used by logistics and pathfinding systems.
+
+Company Layer
+
+Company - Owns all business assets, employees, equipment, and finances.
+
+Facility - Represents a physical business property such as a garage or warehouse.
+
+Account - Maintains company cash, revenue, expenses, and profit.
+
+AssetRegister - Tracks owned machines, materials, and facilities.
+
+Market Layer
+
+Market - Generates and manages active needs.
+
+SampleSubmission - Evaluation record for a proposed product sample.
+
+Contract - Accepted commercial agreement that creates one or more orders.
+
+IndustryProfile - Defines attribute weighting used during need generation.
+
+World Layer
+
+Player - Represents the business owner and controllable character.
+
+Interactable - Base interface for anything the player can physically use.
+
+Computer - World object used for administrative actions.
+
+ShippingArea - Physical dispatch location where completed orders are staged, loaded, and shipped to customers.
+
+ArrivalArea - Physical receiving location where incoming materials, equipment, and deliveries first enter the facility.
+
+StorageArea - World object used for storing inventory.
+
+ShopFloor - Physical production area that contains equipment, storage, employees, materials, parts, and assemblies
+
+Time Layer
+
+MasterClock - The single authoritative time source for the entire simulation.
+
+ScheduledEvent - Event that occurs at a specific game time.
+
+TimerTask - Runtime countdown tied to the Master Clock.
+
+Calendar - Converts raw time into days, weeks, months, and years.
+
+Service Layer (Managers, Not Data)
+
+PartService - Creates, validates, and modifies parts.
+
+AssemblyService - Creates and manages assemblies.
+
+ProductionService - Coordinates manufacturing activities.
+
+EmployeeService - Assigns and manages employee work.
+
+MarketService - Generates needs and evaluates samples.
+
+ShippingService - Manages deliveries and shipments.
+
+FinanceService - Processes payments, expenses, and profit calculations.
